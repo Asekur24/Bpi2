@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPI Blog - Insights</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        /* Multi-color Animated Background */
+        body { 
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+        nav { background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(10px); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
+
+        /* Single Image Banner (Static) */
+        .banner-container { 
+            width: 90%; 
+            max-width: 800px; 
+            height: 300px; 
+            margin: 20px auto; 
+            overflow: hidden; 
+            border-radius: 20px; 
+            border: 4px solid rgba(255,255,255,0.3); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .banner-container img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+        }
+
+        .container { max-width: 800px; margin: 0 auto 40px; padding: 0 20px; }
+
+        /* Blog Card */
+        .blog-card { background: rgba(255, 255, 255, 0.9); border-radius: 20px; margin-bottom: 30px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .blog-content { padding: 25px; }
+        .developer-tag { display: inline-block; background: #1e3c72; color: #f9d423; padding: 4px 12px; border-radius: 5px; font-weight: bold; font-size: 12px; margin-bottom: 10px; }
+        
+        .hidden-content { display: none; margin-top: 15px; border-top: 1px dashed #ccc; padding-top: 10px; }
+        .see-more-btn { background: #e73c7e; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; margin-top: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="qr.html">QR Tool</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="banner-container">
+    <img src="images/1.jpg" alt="BPI Main Photo">
+</div>
+
+<div class="container">
+    <article class="blog-card">
+        <div class="blog-content">
+            <span class="developer-tag">Author: Md Asekur Rahman Jubayer</span>
+            <h2>বরিশাল পলিটেকনিক ইনস্টিটিউট (BPI) এর পূর্ণাঙ্গ ইতিহাস</h2>
+            <p>বিপিআই দক্ষিণাঞ্চলের শ্রেষ্ঠ কারিগরি শিক্ষা প্রতিষ্ঠান। এটি প্রকৌশল ও প্রযুক্তি শিক্ষার এক অনন্য প্রতীক।</p>
+            
+            <div class="hidden-content" id="post1">
+                <p><strong>স্থাপিত:</strong> ১৯৬২ সাল।<br>
+                <strong>বিভাগসমূহ:</strong> সিভিল, কম্পিউটার, ইলেকট্রিক্যাল, মেকানিক্যাল, ইলেকট্রনিক্স, পাওয়ার, ইলেকট্রো-মেডিকেল এবং আরএসি।<br>
+                <strong>অবস্থান:</strong> আলেকান্দা, বরিশাল। এখানে শিক্ষার্থীদের জন্য উন্নত ল্যাব ও হস্টেল সুবিধা রয়েছে।</p>
+            </div>
+            <button class="see-more-btn" onclick="toggleReadMore('post1', this)">See More</button>
+        </div>
+    </article>
+
+    <article class="blog-card">
+        <div class="blog-content">
+            <span class="developer-tag">Author: Md Asekur Rahman Jubayer</span>
+            <h2>স্মার্ট বাংলাদেশ ও কারিগরি শিক্ষা</h2>
+            <p>ভবিষ্যৎ প্রযুক্তিনির্ভর বিশ্বে নিজেকে টিকিয়ে রাখতে কারিগরি শিক্ষার কোনো বিকল্প নেই।</p>
+            
+            <div class="hidden-content" id="post2">
+                <p>ডিপ্লোমা ইঞ্জিনিয়াররা দেশের মেরুদণ্ড। বরিশাল পলিটেকনিক ইনস্টিটিউটের কম্পিউটার টেকনোলজি বিভাগ শিক্ষার্থীদের আধুনিক প্রযুক্তিতে দক্ষ করে তুলছে।</p>
+            </div>
+            <button class="see-more-btn" onclick="toggleReadMore('post2', this)">See More</button>
+        </div>
+    </article>
+</div>
+
+<script>
+    function toggleReadMore(postId, btn) {
+        const content = document.getElementById(postId);
+        if(content.style.display === "block") {
+            content.style.display = "none";
+            btn.innerText = "See More";
+        } else {
+            content.style.display = "block";
+            btn.innerText = "See Less";
+        }
+    }
+</script>
+
+</body>
+</html>
+    <article class="blog-card">
+        <div class="blog-content">
+            <span class="developer-tag">Special Insight: Computer Technology</span>
+            <h2>কম্পিউটার ডিপার্টমেন্টের চাহিদা ও ক্যারিয়ার গাইডলাইন</h2>
+            <p>বর্তমান বিশ্বে আইটি বা ইনফরমেশন টেকনোলজি ছাড়া কোনো কিছুই সম্ভব নয়। কম্পিউটার ইঞ্জিনিয়ারিং পড়লে তোমার সামনে সম্ভাবনার হাজারো দুয়ার খুলে যাবে।</p>
+            
+            <div class="hidden-content" id="post3">
+                <p><strong>কেন কম্পিউটার সায়েন্স পড়বেন?</strong><br>
+                ১. <strong>ফ্রিল্যান্সিং:</strong> ঘরে বসে আন্তর্জাতিক মার্কেটে গ্রাফিক ডিজাইন, ওয়েব ডেভেলপমেন্ট বা ডাটা এন্ট্রি করে আয় করা সম্ভব।<br>
+                ২. <strong>চাকরির বাজার:</strong> সরকারি ও বেসরকারি যেকোনো প্রতিষ্ঠানে আইটি এক্সপার্ট হিসেবে যোগ দেওয়ার সুযোগ। বিশেষ করে বিসিএস বা অন্যান্য সরকারি চাকরিতে কম্পিউটার সায়েন্সের আলাদা কোটা থাকে।<br>
+                ৩. <strong>সফটওয়্যার ইঞ্জিনিয়ারিং:</strong> গুগল, মাইক্রোসফট বা দেশের বড় বড় সফটওয়্যার কোম্পানিতে অ্যাপ বা ওয়েবসাইট ডেভেলপার হিসেবে কাজ করা যায়।<br>
+                ৪. <strong>উচ্চশিক্ষা:</strong> ডিপ্লোমা শেষে ডুয়েট (DUET) বা প্রাইভেট ইউনিভার্সিটি থেকে বিএসসি (BSc) করলে বিদেশের নামী বিশ্ববিদ্যালয়ে স্কলারশিপ পাওয়ার সুযোগ থাকে।</p>
+                
+                <p style="margin-top:10px;"><strong>এই ডিপার্টমেন্টে পড়ার মূল লক্ষ্য:</strong> স্মার্ট বাংলাদেশ গড়তে হলে কোডিং, নেটওয়ার্কিং এবং হার্ডওয়্যার সম্পর্কে দক্ষ হওয়া একান্ত প্রয়োজন।</p>
+            </div>
+            <button class="see-more-btn" onclick="toggleReadMore('post3', this)">See More</button>
+        </div>
+    </article>
